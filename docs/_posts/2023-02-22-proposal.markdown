@@ -45,13 +45,13 @@ Although there are several predictive models for taxi fares in New York City tha
 
 # Dataset:
 
-We will be using [NYC's TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to gather all necessary data, such as dates, location, distance, trips, and more. Since the data given on the website is using format .parquet, we will need to parse the data into an .csv file for further use. To achieve this, we can use pandas library in python and modify the .csv file to reflect changes.
+We will be using [NYC's TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to gather all necessary data. Records include fields capturing pick-up and drop-off dates/times, pick-up and drop-off locations, trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts Since the data given on the website is using format .parquet, we will need to parse the data into an .csv file for further use. To achieve this, we can use pandas library in python and modify the .csv file to reflect changes.
 
 We will be able to use Google Cloud AI Platform to estimate the taxi fare. We can use APIs like BigQuery API to import the dataset and train the model to calculate predictions and losses among other useful items.
 
-This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it.
+This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
 
-<a href="https://www.kaggle.com/competitions/new-york-city-taxi-fare-prediction/data">https://www.kaggle.com/competitions/new-york-city-taxi-fare-prediction/data</a>
+Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
 
 # Work Distribution Chart
 
