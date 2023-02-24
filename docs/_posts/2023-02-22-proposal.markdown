@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Project Proposal"
+title:  "NYC Taxi Fare Prediction Project Proposal"
 date:   2023-02-22 16:55:56 -0500
 categories: jekyll update
 ---
@@ -41,6 +41,7 @@ Although there are several predictive models for taxi fares in New York City tha
 - By April 19 – Trained second model
 - By April 22 – Evaluated second model and compared both models
 - By April 25 – Finishing touches on final report
+- Gantt Chart: [GanttChart.xlsx](https://drive.google.com/file/d/1kezo3Hnp-eNU9r2HoV9J7l_7r3_N54zG/view)
 
 # Dataset:
 
