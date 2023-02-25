@@ -52,6 +52,7 @@ We will be able to use Google Cloud AI Platform to estimate the taxi fare. We ca
 This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
 
 Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
+
 [video overview](https://drive.google.com/file/d/1sVoDzxJn3bhSzEMcnam3IDISVUVXoAZS/view?usp=share_link)
 
 # Work Distribution Chart
