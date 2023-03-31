@@ -41,11 +41,11 @@ Given the relatively large size of our raw dataset, performing dimension reducti
 
 | Group Members | Responsibilities |
 | --- | ----------- |
-| Pratham Patel | Introduction/Background + 1 Reference |
-| Alan Huynh  | Methods/Algorithms + GitHub Page + 1 Reference |
-| Charles McCartney | Methods + Results and Discussion + Conclusion + 1 Reference |
-| Maharshi Patel | Proposed Timeline + Dataset + 1 Reference |
-| Vedant Amin | Problem Definition + 1 Reference |
+| Pratham Patel | Results/Discussion + Exploratory Analysis |
+| Alan Huynh  | Data Pre-Processing + Model Evaluation |
+| Charles McCartney | Results/Discussion + Methods |
+| Maharshi Patel | Conclusion + Results/Discussion |
+| Vedant Amin | Visualizations + Conclusion |
 
 # References
 
