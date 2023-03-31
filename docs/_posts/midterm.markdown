@@ -21,7 +21,7 @@ Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/vie
 # Methods
 
 We are planning on using NYC taxi trip data to predict the fare amount for a taxi drive. This would involve training a model on the data using various supervised learning algorithms such as random forest or KNN and using existing packages and libraries such as scikit-learn. The given labels would be a few categories for how the fare changes based on the data. Parameters that may be analyzed in our model include trip distance, pick-up and drop-off locations, passenger count, and time.
-Thus far, we have proceeded with data cleaning and dimension reduction using backward feature selection. We have also implemented a supervised linear regression model which operates with the most relevant variables to predict fare amounts. 
+Thus far, we have proceeded with data cleaning and dimension reduction using backward feature selection. The entries of the dataset have been converted into processable datatypes to allow for comparisons and further operations. We have also implemented a supervised linear regression model which operates with the most relevant variables to predict fare amounts. 
 
 # Results and Discussion
 
