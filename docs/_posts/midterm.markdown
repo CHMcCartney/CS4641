@@ -17,12 +17,16 @@ We will be able to use Google Cloud AI Platform to estimate the taxi fare. We ca
 This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
 
 Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
+
 # Methods
+
+We are planning on using NYC taxi trip data to predict the fare amount for a taxi drive. This would involve training a model on the data using various supervised learning algorithms such as random forest or KNN and using existing packages and libraries such as scikit-learn. The given labels would be a few categories for how the fare changes based on the data. Parameters that may be analyzed in our model include trip distance, pick-up and drop-off locations, passenger count, and time.
+
+# Results and Discussion
+
 Data has been cleaned via implementing backward feature selection, along with mean squared error and mean absolute error metrics. Beginning with the raw dataset, all null values were replaced with 0, and all columns were converted to the correct respective datatypes for further manipulation. Additionally, steps were implemented to remove all nonsensical data, including fare amounts less than $3.00 in value as well as unreasonably large entries fare amounts exceeding hundreds and/or thousands of dollars. With MTA tax starting at $0.50 and improvement surcharges starting at $0.30, smaller values for each of these dimensions were also removed. Lastly, entries for passenger count exceeding 6 were removed, as New York City statutes indicate six as the legal maximum for passengers in yellow taxis (CITATION NEEDED). Following these steps, potentially useful features were extracted such as values for fare per mile, as well as individual features for time, including year, month, day of the week, etc. The larger parameter for date_time was removed since its features had been fully extracted. For dimension reduction, backward feature selection was implemented to select for the highest scoring features with comparatively low change in error.
 
 Linear Regression: supervised ML model in which the model finds the best fit linear line between the independent and dependent variable 
-
-# Results and Discussion
 
 # Conclusion
 Given the relatively large size of our raw dataset, performing dimension reduction and other cleaning methods presented signifcant difficulties. 
