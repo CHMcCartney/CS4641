@@ -38,7 +38,7 @@ Given the relatively large size of our raw dataset, performing dimension reducti
 | --- | ----------- |
 | Pratham Patel | Introduction/Background + 1 Reference |
 | Alan Huynh  | Methods/Algorithms + GitHub Page + 1 Reference |
-| Charles McCartney | Discussion + Intro Contributions + 1 Reference |
+| Charles McCartney | Methods + Results and Discussion + Conclusion + 1 Reference |
 | Maharshi Patel | Proposed Timeline + Dataset + 1 Reference |
 | Vedant Amin | Problem Definition + 1 Reference |
 
