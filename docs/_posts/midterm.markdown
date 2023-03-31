@@ -5,7 +5,7 @@ New York City (NYC) is one of the largest and most populous urban cities in the 
 
 # Problem Definition
 
-This model will seek to address existing datasets to produce a comparatively more accurate predictive model for taxi trip fares in New York City. The current taxi fare system in New York City is based on a meter that calculates the fare based on time and distance and any additional charges such as tolls and surcharges that may be implied during the peak travel times (3).  However, customers often complain about the unpredictability of taxi fares due to traffic conditions and other factors (4). Our goal is to develop a machine learning model that can handle all the factors that go into predicting accurate fares for different routes, traffic conditions and times of the day. 
+This model will seek to address existing datasets to produce a comparatively more accurate predictive model for taxi trip fares in New York City. The current taxi fare system in New York City is based on a meter that calculates the fare based on time and distance and any additional charges such as tolls and surcharges that may be implied during the peak travel times (3).  However, customers often complain about the unpredictability of taxi fares due to traffic conditions and other factors (4). Our goal is to develop a machine learning model that can handle all the relevant factors that go into predicting accurate fares for different routes, traffic conditions and times of the day. 
 
 
 # Dataset:
@@ -17,11 +17,13 @@ We will be able to use Google Cloud AI Platform to estimate the taxi fare. We ca
 This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
 
 Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
-
+# Methods
+Data has been cleaned via implementing backward feature selection, along with mean squared error and mean absolute error metrics. 
 
 # Results and Discussion
 
 # Conclusion
+Given the relatively large size of our raw dataset, performing dimension reduction and other cleaning methods presented signifcant difficulties. 
 
 # Work Distribution Chart
 
