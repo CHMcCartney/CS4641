@@ -35,7 +35,7 @@ This graph illustrates the relationship between taxi fare amounts and trip dista
 
 
 # Conclusion
-Given the relatively large size of our raw dataset, performing dimension reduction and other cleaning methods presented signifcant difficulties. Despite this, we successfully applied common techniques to clean the dataset and obtain some degree of validity in our results. In the next iteration of the project, we are considering decreasing the dataset to focus on taxi fare data from 2021 and 2022.
+Given the relatively large size of our raw dataset, performing dimension reduction and other cleaning methods presented signifcant difficulties. Despite this, we successfully applied common techniques to clean the dataset and obtain some degree of validity in our results. Moving forward, we plan to further improve the accuracy of our model by exploring other supervised and unsupervised learning techniques. This may include using more complex models such as random forest or KNN, or exploring unsupervised learning techniques such as clustering to identify patterns and relationships within the data. Moreover, the addition of new variables such as weather data or traffic information could be explored to further improve the accuracy of our model. These variables could be incorporated into the existing model as additional independent variables to provide a more accurate prediction of the fare amount.
 
 # Work Distribution Chart
 
