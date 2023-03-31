@@ -36,7 +36,7 @@ In the case of predicting NYC taxi fares, we can use linear regression to model 
 
 ![image](https://user-images.githubusercontent.com/83050055/229246135-063342f8-d7d1-48f1-981f-07eb9e7afe44.png)
 
-This graph illustrates the relationship between taxi fare amounts and trip distances, which was used as an important predicting factor for our model. Graphs were illustrated for all the given features to find the most significant features that have the most correlation with fare amount. 
+This visualization is a feature correlation heatmap that allows the team to identify the relevant independent variables that are likely to have an impact on fare amount, improving the accuracy of machine learning models and other data analysis techniques.
 
 
 # Conclusion
