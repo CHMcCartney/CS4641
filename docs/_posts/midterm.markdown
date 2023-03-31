@@ -18,7 +18,9 @@ This will allow us to compete with other submissions on kaggle since the previou
 
 Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
 # Methods
-Data has been cleaned via implementing backward feature selection, along with mean squared error and mean absolute error metrics. 
+Data has been cleaned via implementing backward feature selection, along with mean squared error and mean absolute error metrics. Beginning with the raw dataset, all null values were replaced with 0, and all columns were converted to the correct respective datatypes for further manipulation. Additionally, steps were implemented to remove all nonsensical data, including fare amounts less than $3.00 in value as well as unreasonably large entries fare amounts exceeding hundreds and/or thousands of dollars. With MTA tax starting at $0.50 and improvement surcharges starting at $0.30, smaller values for each of these dimensions were also removed. Lastly, entries for passenger count exceeding 6 were removed, as New York City statutes indicate six as the legal maximum for passengers in yellow taxis (CITATION NEEDED). Following these steps, potentially useful features were extracted such as values for fare per mile, as well as individual features for time, including year, month, day of the week, etc. The larger parameter for date_time was removed since its features had been fully extracted. For dimension reduction, backward feature selection was implemented to select for the highest scoring features with comparatively low change in error.
+
+Linear Regression: supervised ML model in which the model finds the best fit linear line between the independent and dependent variable 
 
 # Results and Discussion
 
