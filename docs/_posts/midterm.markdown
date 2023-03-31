@@ -30,7 +30,8 @@ Before attempting to apply predictive models paired with this data, the dataset 
 In the case of predicting NYC taxi fares, we can use linear regression to model the relationship between the fare amount and the variables that may influence it. We built a linear regression model using the selected independent variables (trip_distance, passenger_count, tpep_pickup_datetime, tpep_dropoff_datetime) and the fare amount as the dependent variable. The model will estimate the relationship between the independent variables and the fare amount, and produce a set of coefficients that represent the strength and direction of the relationship. After model training, we evaluated the performance of the model using various metrics such as the mean squared error, R-squared, and root mean squared error. This will help us determine if the model is accurately predicting the fare amount based on the independent variables. By identifying the most relevant independent variables and building an accurate model, we can make more informed decisions about taxi fares and potentially optimize the pricing strategy to increase revenue and customer satisfaction.
 
 ![image](https://user-images.githubusercontent.com/42153899/229227472-d2048d58-d8f2-4416-a980-e7fac908a2e2.png)
-This graph illustrates the relationship between taxi fare amounts and trip distances, which was used as an important predicting factor for our model. 
+
+This graph illustrates the relationship between taxi fare amounts and trip distances, which was used as an important predicting factor for our model. Graphs were illustrated for all the given features to find the most significant features that have the most correlation with fare amount. 
 
 
 # Conclusion
