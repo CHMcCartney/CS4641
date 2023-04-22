@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "NYC Taxi Fare Prediction Final Report"
+date:   2023-04-21 12:00:00 -0500
+categories: jekyll update
+---
+# Introduction / Background
+
+New York City (NYC) is one of the largest and most populous urban cities in the United States, known for its high population density, frequent traffic congestion, and relatively expensive travel costs (1). As a cultural and economic powerhouse, NYC is well known for its particular yellow-cabs which serve as a primary mode of transportation for millions of residents and tourists every year. Over the years, the fares for NYC yellow cabs have evolved to keep up with the changing times and the city’s transportation needs, and the New York City Taxi and Limousine Commission (TLC) continues to monitor and adjust the fare structure as needed to ensure that it remains fair and equitable for all involved. Thus, there has been a growing interest in using machine learning algorithms to predict taxi fares, which can provide valuable insights for both passengers and taxi drivers (2). The ability to accurately predict taxi fares can help passengers plan their trips more effectively, while also helping taxi drivers optimize their routes and pricing strategies. This has led to a growing body of research focused on developing models that can accurately predict taxi fares in New York City. In this context, machine learning techniques have proven to be effective in providing accurate predictions, and are being widely used by researchers and industry practitioners to solve this problem
+
+# Problem Definition
+
+This model will seek to address existing datasets to produce a comparatively more accurate predictive model for taxi trip fares in New York City. The current taxi fare system in New York City is based on a meter that calculates the fare based on time and distance and any additional charges such as tolls and surcharges that may be implied during the peak travel times (3). However, customers often complain about the unpredictability of taxi fares due to traffic conditions and other factors (4). Our goal is to develop a machine learning model that can handle all the relevant factors that go into predicting accurate fares for different routes, traffic conditions and times of the day.
+
+
+# Dataset:
+
+We will be using [NYC's TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to gather all necessary data. Records include fields capturing pick-up and drop-off dates/times, pick-up and drop-off locations, trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts Since the data given on the website is using format .parquet, we will need to parse the data into an .csv file for further use. To achieve this, we can use pandas library in python and modify the .csv file to reflect changes.
+
+This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
+
+Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
+
+# Methods
+
+We used NYC taxi trip data to predict the fare amount for a taxi drive. This would involve training a model on the data using various supervised learning algorithms such as Decision Tree, Linear Regression, Random Forest, Lasso, Ridge, and Polynomial Regression. The given labels would be a few categories for how the fare changes based on the data. Parameters that may be analyzed in our model include trip distance, pick-up and drop-off locations, passenger count, and time. 
+
+Through the use of the pandas library, we were able to clean our data and extract useful rows. The entries of the dataset have been converted into processable datatypes to allow for comparisons as well as further operations suitable for our models. By using the Spearman correlation, we could find correlations between numeric features and remove features without a positive correlation with fare amount. Using the scipy library we could implement the t-test and one-way ANOVA test to examine the association between numerical and categorical features and potentially remove them if they were not below our p-value. Our data was then split to train our model on one set of data and then evaluate its performance on another set of data that it hasn't seen before; in our case, we used an 80/20 split between our training and testing data. After this exploratory data analysis and feature selection, our selected models would be imported from the sklearn library on our cleaned data. 
+
+# Data Preprocessing
+
+## Exploratory Data Analysis
+
+For cleaning our data, we found that we had no duplicates and employed numerous strategies to extract relevant data. 
+
+### Trip Travel Time
+We wanted to analyze the total travel hours of a trip, so the pickup and dropoff times had to be converted from an object type into a datetime field. Using the converted times, we could take the difference and get the time difference in hours. We continued by only using data where the hours were greater than zero. Only travel times below 1.5 hours were considered as we found many rows with total travel hours spanning a whole day when analyzing rows over 1.5 hours. As a result, the trip travel times we worked with spanned between 0.01 and 1.5 hours. 
+
+### Trip Distance
+We looked into the trip distance features where we found distances equal to zero but had a nonzero fare amount which did not make sense, so only trip distances greater than zero were considered. Outliers that were greater than 50 miles were then removed as we found a max trip distance of 164072 miles while the average was 3.45 miles. 
+
+### Fare Amount
+The histogram plot of fare amount was visualized to depict the distribution of the data.
+
+
+As seen in the plot, there are some values higher in range, so we checked it deeply. We found that there were negative fare amounts and a max fare amount of $6957 when the average was $13.44. Thus, we only considered fare amounts between $0 and $250. The plot of the data in this range was then visualized. 
+
+
+The fare amounts were then categorized into three ranges: $0-$50, $50-$100, $100-$250.
+
+
+From the above graph, we can see that most ride fare amounts are between $0 to 50$, and very few rides charge between $100 to $250.
+
+### Year
+Through the pickup datetime feature, we could extract the year of a taxi trip. Trips in years that were not 2021 and 2022 were found and promptly dropped. 
+
+### Month
+August, November, December were found to have a higher fare amount as compared to other months. 
+
+### Day
+During the fifth day of the month, the taxi average sales were higher. Sunday was found to have higher average sales, but other days had almost the same average sales. 
+
+### Ratecode ID
+New York City yellow taxis use a Ratecode ID to identify the final rate code at the end of the trip that have categories: 1: Standard rate, 2: JFK, 3: Newark, 4: Nassau, 5: Westchester, 6: Negotiated fare, Group ride. When analyzing this column, a Ratecode ID of 99 was discovered and dropped. 
+
+### Passenger Count
+In the passenger count column, we found there was one trip that had eight passengers while the rest of the data was six or less so that outlier was removed.
+We then found there were many rows that had a NaN value for the airport fee, so we filled them with $0 as standard charges for airport fee $1.25 otherwise $0. 
+
+
+## Feature Selection
+The next step in exploration will be to explore the correlations between attributes to see if there are any significant results. We first employed a heatmap:
+
+
+First, we had to check the correlation between fare_amount and other numeric features. 
+
+
+From above the correlation between two numeric features, we can see that extra, mta-tax,improvement_surcharge and congestion_surcharge features do not have a relationship with fare_amount; therefore, we will drop these four features and leave the rest.
+To examine the association between a numeric (continuous) variable and a categorical variable, we used a t-test (if the categorical variable has two levels) or one-way ANOVA test (if the categorical variable has more than two levels). Here, we use it to find if there’s an association between fare amount and categorical features which included VendorID, store_and_fwd_flag, RatecodeID, payment_type, and passenger_count. T-tests were used for VendorID and store_and_fwd_flag, and the ANOVA test was used for RatecodeID, payment_type, and passenger_count. We used a p-value of 0.05, so if the p-value between a feature and fare amount from the t-test/ANOVA test was below 0.05, it was considered, and all of the categorical features passed the test. 
+Finally, we ended the data preprocessing with feature scaling to standardize the independent variables of a dataset within a specific range.In other words, we limit the range of variables so they can be compared on common grounds.
+
+
+
+# Results and Discussion
+
+The models we considered were Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, and Polynomial Regression. We included Linear Regression as it is a typical model used for regression tasks. Ridge was used in order to see if there was any potential overfitting or underfitting given an alpha value of 1.0 with an L2 normalizer as the penalty. Similarly, Lasso used an alpha value of 1.0 with an L1 normalizer for the penalty. Polynomial Regression analyzed the data by generating a new feature matrix consisting of all polynomial combinations of the features with degree less than or equal to the specified degree of 2 and then fitted it. Decision Tree was used to fit and predict the data along a series of splits. Finally, Random Forest fit a number of classifying decision trees on various sub-samples of the dataset and used averaging to improve the predictive accuracy and control over-fitting in its result. The measured root mean squared error and  mean absolute error for each model was visualized and had their values tabulated. The R^2 Score for each model was also visualized to measure the amount of variance in the predictions explained by the dataset. 
+
+
+
+# Conclusion
+We performed Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, and Polynomial Regression on our New York City yellow taxi trip dataset. Based on the tabular data above, we can conclude that the Random Forest model was the best fit for our data as it had the lowest RSME and MAE out of all the models, and we’re aiming to minimize those values. The R^2 Score for the Random Forest model came out the highest out of all the models as well, further supporting it as the best fit for our data. The regression line of the Random Forest model is visualized below.
+
+# Work Distribution Chart
+
+| Group Members | Responsibilities |
+| --- | ----------- |
+| Pratham Patel | Results/Discussion + Exploratory Analysis |
+| Alan Huynh  | Data Pre-Processing + Model Evaluation |
+| Charles McCartney | Results/Discussion + Methods |
+| Maharshi Patel | Conclusion + Results/Discussion |
+| Vedant Amin | Visualizations + Conclusion |
+
+# References
+
+1. [Exploring the Impact of COVID-19 on Taxi Demand in New York City Using Machine Learning](https://www.proquest.com/docview/2672015744?pq-origsite=primo)
+2. [New York City Taxi Trip Duration using MLP and XGBoost](https://link.springer.com/article/10.1007/s13198-021-01130-x)
+3. [Yellow Cabs Are Struggling. Congestion Pricing Could Deal a New Blow](https://www.nytimes.com/2022/10/11/nyregion/nyc-traffic-yellow-cab-tolls.html)
+4. [Everything You Need To Know About NYC's Taxis](https://www.thetravel.com/what-to-know-about-taxi-cabs-in-nyc-costs/)
+5. [Predicting Taxi Tip Rates in NYC](https://cseweb.ucsd.edu//classes/sp15/cse190-c/reports/sp15/050.pdf)
+6. [City Commission Raises Rates for Yellow Cabs, App-Based Rideshares](https://www.ny1.com/nyc/all-boroughs/news/2022/11/15/city-raises-rates-for-yellow-cabs-app-based-rideshares)
+7. [Driver Rule 54-15(g) Chapter 54 - Drivers of Taxicabs and Street Hail Liveries](https://www.nyc.gov/assets/tlc/downloads/pdf/rule_book_current_chapter_54.pdf) 
