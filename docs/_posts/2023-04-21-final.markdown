@@ -19,7 +19,7 @@ We will be using [NYC's TLC Trip Record Data](https://www.nyc.gov/site/tlc/about
 
 This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
 
-Dataset - (https://drive.google.com/file/d/1-CmijbmmmASVIQLBPF2FGCCz2avQqRni/view?usp=share_link)
+Dataset - (https://drive.google.com/file/d/1x0AAb_pLLvLE6iugiO4QM-NY06k5C2Ly/view?usp=share_link)
 
 # Methods
 
