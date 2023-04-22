@@ -42,12 +42,15 @@ We looked into the trip distance features where we found distances equal to zero
 ### Fare Amount
 The histogram plot of fare amount was visualized to depict the distribution of the data.
 
+![image](https://user-images.githubusercontent.com/90573031/233764871-c98e0e66-a717-4197-8ab1-8886b4d8eb9a.png)
 
 As seen in the plot, there are some values higher in range, so we checked it deeply. We found that there were negative fare amounts and a max fare amount of $6957 when the average was $13.44. Thus, we only considered fare amounts between $0 and $250. The plot of the data in this range was then visualized. 
 
+![image](https://user-images.githubusercontent.com/90573031/233764946-c056b577-8ad7-4a53-a951-670d4d933bf8.png)
 
 The fare amounts were then categorized into three ranges: $0-$50, $50-$100, $100-$250.
 
+![image](https://user-images.githubusercontent.com/90573031/233764962-c090929e-263f-4346-a1bc-84bde8acd389.png)
 
 From the above graph, we can see that most ride fare amounts are between $0 to 50$, and very few rides charge between $100 to $250.
 
@@ -55,9 +58,11 @@ From the above graph, we can see that most ride fare amounts are between $0 to 5
 Through the pickup datetime feature, we could extract the year of a taxi trip. Trips in years that were not 2021 and 2022 were found and promptly dropped. 
 
 ### Month
+![image](https://user-images.githubusercontent.com/90573031/233764984-caf8f385-4564-488c-9d67-c9ba0360da39.png)
 August, November, December were found to have a higher fare amount as compared to other months. 
 
 ### Day
+![image](https://user-images.githubusercontent.com/90573031/233765033-15665953-9bc6-4101-b0c4-de4c46b6f708.png)
 During the fifth day of the month, the taxi average sales were higher. Sunday was found to have higher average sales, but other days had almost the same average sales. 
 
 ### Ratecode ID
@@ -71,8 +76,11 @@ We then found there were many rows that had a NaN value for the airport fee, so 
 ## Feature Selection
 The next step in exploration will be to explore the correlations between attributes to see if there are any significant results. We first employed a heatmap:
 
+![image](https://user-images.githubusercontent.com/90573031/233765102-3cb7e3aa-b87c-487b-b54b-029864172a70.png)
 
 First, we had to check the correlation between fare_amount and other numeric features. 
+
+![image](https://user-images.githubusercontent.com/90573031/233765130-706bd522-608c-4208-b163-ab931f2dbf8b.png)
 
 
 From above the correlation between two numeric features, we can see that extra, mta-tax,improvement_surcharge and congestion_surcharge features do not have a relationship with fare_amount; therefore, we will drop these four features and leave the rest.
@@ -85,10 +93,15 @@ Finally, we ended the data preprocessing with feature scaling to standardize the
 
 The models we considered were Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, and Polynomial Regression. We included Linear Regression as it is a typical model used for regression tasks. Ridge was used in order to see if there was any potential overfitting or underfitting given an alpha value of 1.0 with an L2 normalizer as the penalty. Similarly, Lasso used an alpha value of 1.0 with an L1 normalizer for the penalty. Polynomial Regression analyzed the data by generating a new feature matrix consisting of all polynomial combinations of the features with degree less than or equal to the specified degree of 2 and then fitted it. Decision Tree was used to fit and predict the data along a series of splits. Finally, Random Forest fit a number of classifying decision trees on various sub-samples of the dataset and used averaging to improve the predictive accuracy and control over-fitting in its result. The measured root mean squared error and  mean absolute error for each model was visualized and had their values tabulated. The R^2 Score for each model was also visualized to measure the amount of variance in the predictions explained by the dataset. 
 
+![image](https://user-images.githubusercontent.com/90573031/233765146-b786981b-e3de-407b-8328-d97e2f5a191d.png)
+![image](https://user-images.githubusercontent.com/90573031/233765158-3a025936-4a39-495c-8e61-d3fe3fe8bb23.png)
+![image](https://user-images.githubusercontent.com/90573031/233765176-ebd372ef-f519-46b8-8d52-12c6c7309f3d.png)
 
 
 # Conclusion
 We performed Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, and Polynomial Regression on our New York City yellow taxi trip dataset. Based on the tabular data above, we can conclude that the Random Forest model was the best fit for our data as it had the lowest RSME and MAE out of all the models, and we’re aiming to minimize those values. The R^2 Score for the Random Forest model came out the highest out of all the models as well, further supporting it as the best fit for our data. The regression line of the Random Forest model is visualized below.
+
+![image](https://user-images.githubusercontent.com/90573031/233765189-8892fe3c-5bf9-441b-8fe0-743fa077f06d.png)
 
 # Work Distribution Chart
 
