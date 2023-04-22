@@ -27,7 +27,6 @@ We used NYC taxi trip data to predict the fare amount for a taxi drive. This wou
 
 Through the use of the pandas library, we were able to clean our data and extract useful rows. The entries of the dataset have been converted into processable datatypes to allow for comparisons as well as further operations suitable for our models. By using the Spearman correlation, we could find correlations between numeric features and remove features without a positive correlation with fare amount. Using the scipy library we could implement the t-test and one-way ANOVA test to examine the association between numerical and categorical features and potentially remove them if they were not below our p-value. Our data was then split to train our model on one set of data and then evaluate its performance on another set of data that it hasn't seen before; in our case, we used an 80/20 split between our training and testing data. After this exploratory data analysis and feature selection, our selected models would be imported from the sklearn library on our cleaned data. 
 
-# Data Preprocessing
 
 ## Exploratory Data Analysis
 
