@@ -17,7 +17,7 @@ This model will seek to address existing datasets to produce a comparatively mor
 
 We will be using [NYC's TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) to gather all necessary data. Records include fields capturing pick-up and drop-off dates/times, pick-up and drop-off locations, trip distances, itemized fares, rate types, payment types, and driver-reported passenger counts Since the data given on the website is using format .parquet, we will need to parse the data into an .csv file for further use. To achieve this, we can use pandas library in python and modify the .csv file to reflect changes. 
 
-This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before covid-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
+This will allow us to compete with other submissions on kaggle since the previous submissions used old data (around 2015). The new data from NYC’s website will be more accurate and relevant to post-COVID time and will factor in inflated prices and make prediction based on it. However, the data existing before COVID-19 has already been prepared below and will be merged into the new dataset from the NYC TLC website.
 Initially, we used all data spanning from 2016 to 2022. However, due to complications with the size of the combined data, we focused on more recent data from 2021 and 2022, which potentially removed any complications
 of taxi fare changes due to COVID-19. 
 
@@ -26,6 +26,7 @@ Dataset - [NYC's TLC Trip Record Data 2021 - 2022](https://drive.google.com/file
 # Methods
 
 We used NYC taxi trip data to predict the fare amount for a taxi drive. This would involve training a model on the data using various supervised learning algorithms such as Decision Tree, Linear Regression, Random Forest, Lasso, Ridge, and Polynomial Regression. The given labels would be a few categories for how the fare changes based on the data. Parameters that may be analyzed in our model include trip distance, pick-up and drop-off locations, passenger count, and time. 
+
 
 Through the use of the pandas library, we were able to clean our data and extract useful rows. The entries of the dataset have been converted into processable datatypes to allow for comparisons as well as further operations suitable for our models. By using the Spearman correlation, we could find correlations between numeric features and remove features without a positive correlation with fare amount. Using the scipy library we could implement the t-test and one-way ANOVA test to examine the association between numerical and categorical features and potentially remove them if they were not below our p-value. Our data was then split to train our model on one set of data and then evaluate its performance on another set of data that it hasn't seen before; in our case, we used an 80/20 split between our training and testing data. After this exploratory data analysis and feature selection, our selected models would be imported from the sklearn library on our cleaned data. 
 
