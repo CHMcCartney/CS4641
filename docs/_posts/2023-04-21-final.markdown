@@ -22,6 +22,7 @@ Initially, we used all data spanning from 2016 to 2022. However, due to complica
 of taxi fare changes due to COVID-19. 
 
 Dataset - [NYC's TLC Trip Record Data 2021 - 2022](https://drive.google.com/file/d/1nnsVvh4Edc_06qU7GaE3HMcr8suaNA7x/view)
+[video overview](https://drive.google.com/file/d/18xbPJep2vNHaZ43lqOKXBdXbSEdwNR-Q/view?usp=share_link)
 
 # Methods
 
@@ -109,11 +110,11 @@ We performed Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, and 
 
 | Group Members | Responsibilities |
 | --- | ----------- |
-| Pratham Patel | Results/Discussion + Exploratory Analysis |
-| Alan Huynh  | Data Pre-Processing + Model Evaluation |
-| Charles McCartney | Results/Discussion + Methods |
-| Maharshi Patel | Conclusion + Results/Discussion |
-| Vedant Amin | Visualizations + Conclusion |
+| Pratham Patel | Video + Exploratory Data Analysis  |
+| Alan Huynh  | Report + Model Evaluation |
+| Charles McCartney | Report + Exploratory Data Analysis |
+| Maharshi Patel | Feature Reduction + Visualizations |
+| Vedant Amin | Exploratory Data Anaysis + Model Evaluation |
 
 # References
 
